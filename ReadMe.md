@@ -40,7 +40,8 @@ For running the project it is required to create a database, The API use LINQ, w
 1. Create a database and run the scripts (or use database-update in Visual Studio to use code-first and create the tables after updating the connection string).
 2. Update the Connection String in appsettings.json
 
-https://github.com/IvanDario/APIInvoices/blob/master/APIInvoices/appsettings.json#L10-L12
+
+[README](https://github.com/IvanDario/APIInvoices/blob/master/APIInvoices/appsettings.json#L10-L12)
 
 
 ## Developing
