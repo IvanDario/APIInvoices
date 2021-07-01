@@ -5,13 +5,15 @@ This API expose three controllers, for Accounting Documents.
 
 Invoices:
 /api/Invoices
+[Example]https://apiinvoicesapi.azure-api.net/api/Invoices
 
 Credit Notes:
 /api/CreditNotes
+[Example]https://apiinvoicesapi.azure-api.net/api/Invoices
 
 Documents: Documents are the Invoices and Credit Notes aggregation, this objects is GET only
 /api/Documents
-
+[Example]https://apiinvoicesapi.azure-api.net/api/Documents
 
 ## Installing / Getting started
 
@@ -38,70 +40,54 @@ For running the project it is required to create a database, The API use LINQ, w
 ### Initial Configuration
 
 1. Create a database and run the scripts (or use database-update in Visual Studio to use code-first and create the tables after updating the connection string).
-2. Update the Connection String in appsettings.json
+2. Update the Connection String in appsettings.json [HERE](https://github.com/IvanDario/APIInvoices/blob/master/APIInvoices/appsettings.json#L10-L12)
 
 
-[README](https://github.com/IvanDario/APIInvoices/blob/master/APIInvoices/appsettings.json#L10-L12)
+## TASKS
+
+This project is the solution for a technical test with the followin Tasks:
+
+1. Expose an API which takes in a batch of invoices and stores them in mysql and returns that back in response
+ ``
+ **SOLUTION:**
+
+    /api/Invoices - POST
+
+    The parameter is an Invoice Array.  It ignores CreatedAt, Id fields.
+
+    When success returns an Invoice Array with the same information but the Id and CreatedAt fields populated after saving then in the Database 
+
+    ***InvoiceArray
+    {
+    "type": "array",
+    "items": {
+        "$ref": "#/definitions/Invoice"
+    }
+    ***
+
+``
+
+2. Expose another API which takes in a batch of credit notes and stores them in mysql and returns that back in response 
+
+3. Expose another API which returns back an aggregated list of the data stored in invoice and credit note as a single list sorted by createdAt
 
 
-## Developing
+Following the REST standard those operations and definitions were implemented:
 
-xxx:
-
-
-### Building
-
-If your project needs some additional steps for the developer to build the
-xxct after some code changes, state them here:
-
-```shell
-./configure
-make
-make install
-```
-
-Here again you should state what actually happens when the code above gets
-executed.
-
-### Deploying / Publishing
-
-xxx
+### OPERATIONS
 
 
-## Features
+### DEFINITIONS
 
-What's all the bells and whistles this project can perform?
-* What's the main functionality
-* You can also do another thing
-* If you get really randy, you can even do this
-
-## Configuration
-
-gge you should write what are all of the configurations a user can enter when
-using the project.
-
-#### Argument 1
-Type: `String`  
-Default: `'default value'`
-
-State what an argument does and how you can use it. If needed, you can provide
-an example below.
-
-Example:
-```bash
-awesome-project "Some other value"  # Prints "You're nailing this readme!"
-```
-
-#### Argument 2
-Type: `Number|Boolean`  
-Default: 100
-
-Copy-paste as many of these as you need.
 
 
 ## Links
 
 Live Example:
+
+https://apiinvoicesapi.azure-api.net/
+
+This code was published using Azure and SQL Azure, with no security or authetincation to be tested.
 
 
 ## Licensing
