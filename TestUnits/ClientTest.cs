@@ -18,7 +18,9 @@ namespace TestUnits
         {
             dc = new APIInvoicesClient(new APIInvoicesConfiguration()
             {
-                BaseUrl = "https://localhost:5001/"
+                //BaseUrl = "https://localhost:5001/"
+                BaseUrl = "https://apiinvoicesapi.azure-api.net/"
+
             });
         }
 
